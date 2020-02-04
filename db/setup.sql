@@ -1,0 +1,5 @@
+DROP DATABASE IF EXISTS ambiscape_test;
+DROP DATABASE IF EXISTS ambiscape;
+
+CREATE DATABASE ambiscape_test;
+CREATE DATABASE ambiscape;
