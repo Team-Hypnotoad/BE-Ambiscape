@@ -23,7 +23,17 @@ const fetchUserById = (params) => {
         return user;
       }
     })
-
 }
 
-module.exports = { insertUser, fetchUserById };
+const removeUserById = (params) => {
+  return connection('users')
+    .where('users.id', '=', params.user_id)
+    .del()
+    .then(user => {
+      if (!user) {
+        return Promise.reject({ 'err': [404, 'User Not Found'] })
+      }
+    })
+}
+
+module.exports = { insertUser, fetchUserById, removeUserById };

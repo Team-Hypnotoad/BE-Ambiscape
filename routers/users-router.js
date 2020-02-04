@@ -1,6 +1,6 @@
 const usersRouter = require('express').Router();
 const { send405Error } = require('../errorHandling');
-const { getUserById, postUser } = require('../controllers/users-controller');
+const { getUserById, postUser, deleteUserById } = require('../controllers/users-controller');
 
 usersRouter.route('/')
   .post(postUser)
@@ -8,7 +8,7 @@ usersRouter.route('/')
 
 usersRouter.route('/:user_id')
   .get(getUserById)
-  // .delete()
+  .delete(deleteUserById)
   .all(send405Error);
 
 // usersRouter.route('/:user_id/scenarios')
