@@ -1,0 +1,265 @@
+{
+  "GET /api": {
+    "description": "serves up a json representation of all the available endpoints of the api"
+  },
+  "POST /api/users": {
+    "description": "adds a new user to the database and serves a json representation of the posted user",
+    "queries": [],
+    "exampleResponse": {
+      "user": [
+        {
+          "username": "weegembump",
+          "name": "Gemma Bump",
+          "avatar_url": "https://www.upandrunning.co.uk/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/m/r/mr-bump.jpg",
+          "saved_scenarios": "night forest, warm desert"
+        }
+      ]
+    }
+  },
+  "GET /api/users/:user_id": {
+    "description": "serves a json representation of a single user",
+    "queries": [],
+    "exampleResponse": {
+      "user": [
+        {
+          "username": "weegembump",
+          "name": "Gemma Bump",
+          "avatar_url": "https://www.upandrunning.co.uk/media/catalog/product/cache/1/image/650x/040ec09b1e35df139433887a97daa66f/m/r/mr-bump.jpg",
+          "saved_scenarios": "night forest, warm desert"
+        }
+      ]
+    }
+  },
+  "DELETE /api/users/:user_id": {
+    "description": "Deletes a specified users account.",
+    "queries": [],
+    "exampleResponse": {}
+  },
+  "GET /api/users/:user_id/scenarios": {
+    "description": "Returns a list of scenarios created by a specific user",
+    "queries": [],
+    "exampleResponse": {
+      "scenarios": {
+        "name": "Forest",
+        "slug": "forest",
+        "creator_id": 1,
+        "color_scheme": [],
+        "is_public": true,
+        "likes": 0,
+        "sounds": [
+          {
+            "id": 519,
+            "slug": "smallstream",
+            "volume": 0.7,
+            "pan": 0.5
+          },
+          {
+            "id": 521,
+            "slug": "summerambience",
+            "volume": 0.55,
+            "pan": -0.3
+          },
+          {
+            "id": 23,
+            "slug": "woodpecker",
+            "volume": 0.7,
+            "pan": 0,
+            "frequency": 0.2
+          },
+          {
+            "id": 22,
+            "slug": "woodpidgeon",
+            "volume": 0.7,
+            "pan": -0.43,
+            "frequency": 0.5
+          },
+          {
+            "id": 2,
+            "slug": "blackbird",
+            "volume": 0.47,
+            "pan": 0.4,
+            "frequency": 0.5
+          },
+          {
+            "id": 1,
+            "slug": "bee",
+            "volume": 0.45,
+            "pan": 0,
+            "frequency": 0.2
+          }
+        ]
+      }
+    }
+  },
+  "GET /api/scenarios": {
+    "description": "serves a list of all scenarios as a json object",
+    "queries": [
+      "public",
+      "creator_id"
+    ],
+    "exampleResponse": {
+      "scenarios": {
+        "name": "Forest",
+        "slug": "forest",
+        "creator_id": 1,
+        "color_scheme": [],
+        "is_public": true,
+        "likes": 0,
+        "sounds": [
+          {
+            "id": 519,
+            "slug": "smallstream",
+            "volume": 0.7,
+            "pan": 0.5
+          },
+          {
+            "id": 521,
+            "slug": "summerambience",
+            "volume": 0.55,
+            "pan": -0.3
+          },
+          {
+            "id": 23,
+            "slug": "woodpecker",
+            "volume": 0.7,
+            "pan": 0,
+            "frequency": 0.2
+          },
+          {
+            "id": 22,
+            "slug": "woodpidgeon",
+            "volume": 0.7,
+            "pan": -0.43,
+            "frequency": 0.5
+          },
+          {
+            "id": 2,
+            "slug": "blackbird",
+            "volume": 0.47,
+            "pan": 0.4,
+            "frequency": 0.5
+          },
+          {
+            "id": 1,
+            "slug": "bee",
+            "volume": 0.45,
+            "pan": 0,
+            "frequency": 0.2
+          }
+        ]
+      }
+    }
+  },
+  "POST /api/scenarios": {
+    "description": "adds a new scenario to the database and serves it as a json object",
+    "queries": [],
+    "exampleResponse": {
+      "scenarios": {
+        "name": "Forest",
+        "slug": "forest",
+        "creator_id": 1,
+        "color_scheme": [],
+        "is_public": true,
+        "likes": 0,
+        "sounds": [
+          {
+            "id": 519,
+            "slug": "smallstream",
+            "volume": 0.7,
+            "pan": 0.5
+          },
+          {
+            "id": 521,
+            "slug": "summerambience",
+            "volume": 0.55,
+            "pan": -0.3
+          },
+          {
+            "id": 23,
+            "slug": "woodpecker",
+            "volume": 0.7,
+            "pan": 0,
+            "frequency": 0.2
+          },
+          {
+            "id": 22,
+            "slug": "woodpidgeon",
+            "volume": 0.7,
+            "pan": -0.43,
+            "frequency": 0.5
+          },
+          {
+            "id": 2,
+            "slug": "blackbird",
+            "volume": 0.47,
+            "pan": 0.4,
+            "frequency": 0.5
+          },
+          {
+            "id": 1,
+            "slug": "bee",
+            "volume": 0.45,
+            "pan": 0,
+            "frequency": 0.2
+          }
+        ]
+      }
+    }
+  },
+  "GET /api/scenarios/:scenario_id": {
+    "description": "serves a json object representing a specific scenario",
+    "queries": [],
+    "exampleResponse": {
+      "scenarios": {
+        "name": "Forest",
+        "slug": "forest",
+        "creator_id": 1,
+        "color_scheme": [],
+        "is_public": true,
+        "likes": 0,
+        "sounds": [
+          {
+            "id": 519,
+            "slug": "smallstream",
+            "volume": 0.7,
+            "pan": 0.5
+          },
+          {
+            "id": 521,
+            "slug": "summerambience",
+            "volume": 0.55,
+            "pan": -0.3
+          },
+          {
+            "id": 23,
+            "slug": "woodpecker",
+            "volume": 0.7,
+            "pan": 0,
+            "frequency": 0.2
+          },
+          {
+            "id": 22,
+            "slug": "woodpidgeon",
+            "volume": 0.7,
+            "pan": -0.43,
+            "frequency": 0.5
+          },
+          {
+            "id": 2,
+            "slug": "blackbird",
+            "volume": 0.47,
+            "pan": 0.4,
+            "frequency": 0.5
+          },
+          {
+            "id": 1,
+            "slug": "bee",
+            "volume": 0.45,
+            "pan": 0,
+            "frequency": 0.2
+          }
+        ]
+      }
+    }
+  }
+}
