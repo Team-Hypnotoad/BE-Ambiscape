@@ -1,14 +1,15 @@
 const usersRouter = require('express').Router();
 const { send405Error } = require('../errorHandling');
-const { getUsers, addUser } = require('../controllers/users-controller');
+const { getUserById, postUser } = require('../controllers/users-controller');
 
 usersRouter.route('/')
-  .post(addUser)
+  .post(postUser)
   .all(send405Error);
 
-// usersRouter.route('/:user_id')
-//   .get(getUsers)
-//   .all(send405Error);
+usersRouter.route('/:user_id')
+  .get(getUserById)
+  // .delete()
+  .all(send405Error);
 
 // usersRouter.route('/:user_id/scenarios')
 //   .get(getScenariosByUserId)
